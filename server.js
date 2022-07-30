@@ -1,5 +1,10 @@
 const express = require('express')
+const dotenv = require('dotenv')
+
 const app = express()
+
+dotenv.config({path: 'config.env'})
+
 app.get('/', (request, response)=>{
     response.send('Classroom Management Application')
 })
