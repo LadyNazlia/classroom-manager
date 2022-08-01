@@ -8,7 +8,7 @@ dotenv.config({path:'config.env'})
 const PORT = process.env.PORT || 8080
 
 //parse request to body-parser
-app.usee(bodyparser.urlencoded({extended: true}))
+app.use(bodyparser.urlencoded({extended: true}))
 
 //set view engine
 app.set('view engine', 'ejs')
@@ -21,7 +21,7 @@ app.use('/img', express.static(path.resolve(__dirname, 'assets/js')))
 app.use('/js', express.static(path.resolve(__dirname, 'assets/img')))
 
 app.get('/', (request, response)=>{
-    response.send('Classroom Management Application')
+    response.render('index')
 })
 
 app.listen(PORT, ()=> {
